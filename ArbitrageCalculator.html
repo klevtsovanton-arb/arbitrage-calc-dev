@@ -82,7 +82,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
       <button class="tab on" id="tabOvw" onclick="switchTo('OVW')" style="font-size:13px;background:var(--green)">📊 Обзор</button>
       <button class="tab" id="tabEU" onclick="switchTo('EURUSD')">EUR/USD</button>
       <button class="tab" id="tabUCNY" onclick="switchTo('UCNY')">USD/CNH</button>
-      <button class="tab" id="tabTriple" onclick="switchTo('TRIPLE')" style="font-size:12px">Si/Cr/CNH</button>
+      <button class="tab" id="tabTriple" onclick="switchTo('TRIPLE')" style="font-size:12px">Si/Cr/USDCNH</button>
       <button class="tab" id="tabTripleEu" onclick="switchTo('TRIPLE_EU')" style="font-size:12px">Eu/Cr/EURCNH</button>
       <button class="tab" id="tabGold" onclick="switchTo('GOLD')">Gold</button>
       <button class="tab" id="tabSilver" onclick="switchTo('SILVER')">Silver</button>
@@ -92,7 +92,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     <div class="hdr-right">
       <h1 id="hdrTitle">Калькулятор арбитража EUR/USD</h1>
       <p id="hdrSub">SHORT Forex × LONG MOEX | Эксп. 18.06.2026</p>
-      <p style="font-size:10px;color:var(--tm);margin-top:2px;font-weight:700">v0.0.1.c</p>
+      <p style="font-size:10px;color:var(--tm);margin-top:2px;font-weight:700">v0.0.1.d</p>
     </div>
   </div>
 
@@ -280,8 +280,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
           <div class="row"><label>Стоп-аут FX</label><input id="teStopout" type="number" step="5" value="50" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
           <div class="sep"></div>
           <div class="card-t" style="color:var(--red)">💸 Издержки</div>
-          <div class="row"><label>Своп EURCNH short</label><input id="teSwapS" type="number" step="0.001" value="-3.5" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
-          <div class="row"><label>Своп EURCNH long</label><input id="teSwapL" type="number" step="0.001" value="0.17" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп EURCNH short</label><input id="teSwapS" type="number" step="0.001" value="-0.507" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп EURCNH long</label><input id="teSwapL" type="number" step="0.001" value="0.007" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
           <div class="hint"><span id="teSwapLive" style="color:var(--yellow);font-weight:700"></span> <span style="color:var(--tm)">· сверь с терминалом, у брокеров разные</span></div>
           <div class="row"><label>РЕПО (год.)</label><input id="teRepo" type="number" step="1" value="21" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
           <div class="row"><label>Пейаут</label><input id="tePayout" type="number" step="1" value="5" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
@@ -503,7 +503,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   </div>
 
   </div><!-- /mainContent -->
-  <div class="footer">Грамотный Трейдинг v0.0.1.c | Апрель 2026 | Все расчёты — оценка при текущих параметрах</div>
+  <div class="footer">Грамотный Трейдинг v0.0.1.d | Апрель 2026 | Все расчёты — оценка при текущих параметрах</div>
 </div>
 
 <script>
@@ -1267,7 +1267,7 @@ function calcOvw(){
     trT.style.cursor='pointer';
     trT.onclick=()=>switchTo('TRIPLE');
     trT.innerHTML=`
-      <td class="hl" style="color:var(--orange);font-size:15px;font-weight:900">Si/Cr/CNH</td>
+      <td class="hl" style="color:var(--orange);font-size:15px;font-weight:900">Si/Cr/USDCNH</td>
       <td class="hl">${absSpread.toFixed(2)}%</td>
       <td style="color:${dirCT}">${dirTxtT}</td>
       <td>${bSiC>0?bFxLots:'—'}</td>
@@ -1291,7 +1291,7 @@ function calcOvw(){
     const triSp=(synth-fxP)/fxP*100;
     const absSp=Math.abs(triSp);
     const isN=triSp<0;
-    const swPips=isN?(+$('teSwapS').value||-3.5):(+$('teSwapL').value||0.17);
+    const swPips=isN?(+$('teSwapS').value||-0.507):(+$('teSwapL').value||0.007);
     const goEu=+$('teGoEu').value||14118, goCrE=+$('teGoCr').value||1072;
     const crPerEu=Math.round(fxP);
     const goPerEu=goEu+crPerEu*goCrE;
