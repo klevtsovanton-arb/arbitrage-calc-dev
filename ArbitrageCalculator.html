@@ -92,7 +92,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     <div class="hdr-right">
       <h1 id="hdrTitle">Калькулятор арбитража EUR/USD</h1>
       <p id="hdrSub">SHORT Forex × LONG MOEX | Эксп. 18.06.2026</p>
-      <p style="font-size:10px;color:var(--tm);margin-top:2px;font-weight:700">v0.0.1.b</p>
+      <p style="font-size:10px;color:var(--tm);margin-top:2px;font-weight:700">v0.0.1.c</p>
     </div>
   </div>
 
@@ -174,8 +174,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
           <div class="row"><label>Стоп-аут FX</label><input id="trStopout" type="number" step="5" value="50" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">%</div></div>
           <div class="sep"></div>
           <div class="card-t" style="color:var(--red)">💸 Издержки</div>
-          <div class="row"><label>Своп CNH short</label><input id="trSwapS" type="number" step="0.001" value="-0.689" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">пипс</div></div>
-          <div class="row"><label>Своп CNH long</label><input id="trSwapL" type="number" step="0.001" value="0.216" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп CNH short</label><input id="trSwapS" type="number" step="0.001" value="-0.717" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп CNH long</label><input id="trSwapL" type="number" step="0.001" value="0.245" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">пипс</div></div>
+          <div class="hint"><span id="trSwapLive" style="color:var(--yellow);font-weight:700"></span> <span style="color:var(--tm)">· сверь с терминалом, у брокеров разные</span></div>
           <div class="row"><label>РЕПО (год.)</label><input id="trRepo" type="number" step="1" value="21" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">%</div></div>
           <div class="row"><label>Пейаут</label><input id="trPayout" type="number" step="1" value="5" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">%</div></div>
           <div class="row"><label>Комиссия FX/лот</label><input id="trComm" type="number" step="1" value="5" oninput="calcTriple()" onchange="calcTriple()"><div class="unit">$</div></div>
@@ -279,8 +280,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
           <div class="row"><label>Стоп-аут FX</label><input id="teStopout" type="number" step="5" value="50" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
           <div class="sep"></div>
           <div class="card-t" style="color:var(--red)">💸 Издержки</div>
-          <div class="row"><label>Своп EURCNH short</label><input id="teSwapS" type="number" step="0.001" value="-0.35" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
-          <div class="row"><label>Своп EURCNH long</label><input id="teSwapL" type="number" step="0.001" value="0.017" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп EURCNH short</label><input id="teSwapS" type="number" step="0.001" value="-3.5" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
+          <div class="row"><label>Своп EURCNH long</label><input id="teSwapL" type="number" step="0.001" value="0.17" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">пипс</div></div>
+          <div class="hint"><span id="teSwapLive" style="color:var(--yellow);font-weight:700"></span> <span style="color:var(--tm)">· сверь с терминалом, у брокеров разные</span></div>
           <div class="row"><label>РЕПО (год.)</label><input id="teRepo" type="number" step="1" value="21" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
           <div class="row"><label>Пейаут</label><input id="tePayout" type="number" step="1" value="5" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">%</div></div>
           <div class="row"><label>Комиссия FX/лот</label><input id="teComm" type="number" step="1" value="5" oninput="calcTripleEu()" onchange="calcTripleEu()"><div class="unit">$</div></div>
@@ -386,6 +388,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
         <div class="card-t" style="color:var(--red)">💸 Издержки</div>
         <div class="row"><label>Своп (пипс/ночь)</label><input id="inSwap" oninput="calc()" onchange="calc()" type="number" step="0.001" value="0.104"><div class="unit">пипс</div></div>
         <div class="hint">+ = вам платят, − = вы платите. <span id="swapLive" style="color:var(--yellow);font-weight:700"></span></div>
+        <div class="hint">Свопы меняются брокером, сверяй с терминалом</div>
         <div class="row"><label>Спред FX (bid/ask)</label><input id="inFxSpread" oninput="calc()" onchange="calc()" type="number" step="0.1" value="0"><div class="unit">$/oz</div></div>
         <div class="hint">Разница bid−ask у брокера. Для EUR/USD и Gold ~0, для Platinum ~7$</div>
         <div class="row"><label>Ставка РЕПО (год.)</label><input id="inRepo" oninput="calc()" onchange="calc()" type="number" step="0.5" value="21"><div class="unit">%</div></div>
@@ -500,7 +503,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   </div>
 
   </div><!-- /mainContent -->
-  <div class="footer">Грамотный Трейдинг v0.0.1.b | Апрель 2026 | Все расчёты — оценка при текущих параметрах</div>
+  <div class="footer">Грамотный Трейдинг v0.0.1.c | Апрель 2026 | Все расчёты — оценка при текущих параметрах</div>
 </div>
 
 <script>
@@ -513,8 +516,8 @@ const MODES={
   EURUSD:{label:'EUR/USD',pipSz:.0001,pipVal:10,stepSz:.0001,stepPr:7.70,lpc:100,go:8367,comm:5,cSize:100000,fxLev:100,dir:'back',
     lotStep:.5,lotMin:.5,lotMax:5,swap:.104,repo:21,iv:7.51,exp:'2026-06-18',spot:1.17304,fut:1.16741,fxSpread:0,
     moexTicker:'EDM6',fxSymbol:'EUR/USD'},
-  UCNY:{label:'USD/CNH',pipSz:.0001,pipVal:10,stepSz:.001,stepPr:11.24,lpc:100,go:7738,comm:5,cSize:100000,fxLev:100,dir:'back',pipValForeign:true,
-    lotStep:.5,lotMin:.5,lotMax:5,swap:-7.27,repo:21,iv:5,exp:'2026-06-18',spot:6.8305,fut:6.818,fxSpread:0,
+  UCNY:{label:'USD/CNH',pipSz:.001,pipVal:100,stepSz:.001,stepPr:11.24,lpc:100,go:7738,comm:5,cSize:100000,fxLev:100,dir:'back',pipValForeign:true,
+    lotStep:.5,lotMin:.5,lotMax:5,swap:-.717,repo:21,iv:5,exp:'2026-06-18',spot:6.8305,fut:6.818,fxSpread:0,
     moexTicker:'UCM6',fxSymbol:'USD/CNH'},
   GOLD:{label:'Gold',pipSz:.01,pipVal:1,stepSz:.1,stepPr:7.70,lpc:100,go:50000,comm:5,cSize:100,fxLev:100,dir:'cont',
     lotStep:.1,lotMin:.1,lotMax:2,swap:-6.841,repo:21,iv:15,exp:'2026-06-19',spot:4748.47,fut:4793.70,fxSpread:0,
@@ -1203,7 +1206,7 @@ function calcOvw(){
     const triSpread=(synthetic-fx)/fx*100;
     const absSpread=Math.abs(triSpread);
     const isNeg=triSpread<0;
-    const swapPips=isNeg?(+$('trSwapS').value||-.689):(+$('trSwapL').value||.216);
+    const swapPips=isNeg?(+$('trSwapS').value||-.717):(+$('trSwapL').value||.245);
     const goSi=+$('trGoSi').value||12311, goCr=+$('trGoCr').value||1106;
     const crPerSi=Math.round(fx);
     const goPerSi=goSi+crPerSi*goCr;
@@ -1238,7 +1241,7 @@ function calcOvw(){
       const sigT=sigPT>0?minP/100/sigPT:0;
       if(sigT<1.2)break;
       const gross=absSpread/100*notional;
-      const fxPipVal=10/fx;
+      const fxPipVal=100/fx;
       const swT=swapPips*fxPipVal*fxLots*ovwDays;
       const borT=Math.max(0,mxGoT-mxOwnT);
       const repoTT=borT*repoAnn/365*ovwDays/rub;
@@ -1288,7 +1291,7 @@ function calcOvw(){
     const triSp=(synth-fxP)/fxP*100;
     const absSp=Math.abs(triSp);
     const isN=triSp<0;
-    const swPips=isN?(+$('teSwapS').value||-0.35):(+$('teSwapL').value||0.017);
+    const swPips=isN?(+$('teSwapS').value||-3.5):(+$('teSwapL').value||0.17);
     const goEu=+$('teGoEu').value||14118, goCrE=+$('teGoCr').value||1072;
     const crPerEu=Math.round(fxP);
     const goPerEu=goEu+crPerEu*goCrE;
@@ -1321,7 +1324,7 @@ function calcOvw(){
       const sigE=sigPE>0?minPE/100/sigPE:0;
       if(sigE<1.2)break;
       const grossE=absSp/100*notUsd;
-      const fxPipValE=10*crP/rub;
+      const fxPipValE=100*crP/rub;
       const swTE=swPips*fxPipValE*fxLotsE*ovwDays;
       const borE=Math.max(0,mxGoE-mxOwnE);
       const repoE=borE*repoAnn/365*ovwDays/rub;
@@ -1435,9 +1438,9 @@ function calcTriple(){
   // FX buffer
   const se=stopout*fxMarg;
   const fxB=fxCap-se;
-  const fxPipVal=10/fx*fxLots; // USD per pip total
+  const fxPipVal=100/fx*fxLots; // USD per pip total
   const fxBufPips=fxPipVal>0?Math.round(fxB/fxPipVal):0;
-  const fxBufPct=fxBufPips*0.0001/fx*100;
+  const fxBufPct=fxBufPips*0.001/fx*100;
 
   // MOEX buffer: per 1% of spread, MOEX P&L ≈ notional × rub / 100
   const mxSensPerPct=notional*rub/100;
@@ -1464,7 +1467,7 @@ function calcTriple(){
   // P&L
   const gross=Math.abs(spreadPct)/100*notional;
   const swapPips=isNegative?swapS:swapL;
-  const swT=swapPips*(10/fx)*fxLots*days; // pip value × lots × days
+  const swT=swapPips*(100/fx)*fxLots*days; // pip value × lots × days
   const bor=Math.max(0,mxGoTotal-mxOwn);
   const repoT=bor*repoAnn/365*days/rub;
   const cm=Math.max(1,Math.round(fxLots))*comm; // min 1 lot commission
@@ -1498,10 +1501,14 @@ function calcTriple(){
 
   // Capital usage
   const freeFx=fxCap-fxMarg;
-  const swDaily=swapPips*(10/fx)*fxLots;
+  const swDaily=swapPips*(100/fx)*fxLots;
   const repoN=bor*repoAnn/365;
   const repoNusd=repoN/rub;
   const swPctCap=Math.abs(swT)/totCap*100;
+  // Live swap hint
+  const trSwSign=swDaily>=0?'+':'−';
+  const trSwColor=swDaily>=0?'var(--green)':'var(--red)';
+  $('trSwapLive').innerHTML=`→ <span style="color:${trSwColor}">${trSwSign}$${fm(Math.abs(swDaily),2)}/сутки</span> на ${fxLots.toFixed(2)} FX лота`;
   $('trCapUsage').innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'
     +'<div><div style="font-size:11px;color:var(--tl);margin-bottom:4px"><b style="color:var(--cyan)">FOREX</b></div>'
     +'<div style="font-size:12px;color:var(--tl)">Маржа: <b style="color:var(--tw)">$'+fm(fxMarg,0)+'</b> ('+fxLots.toFixed(2)+' лотов)</div>'
@@ -1647,10 +1654,10 @@ function calcTripleEu(){
   // FX buffer
   const se=stopout*fxMarg;
   const fxB=fxCap-se;
-  const fxPipValPerLot=10*cr/rub;
+  const fxPipValPerLot=100*cr/rub;
   const fxPipVal=fxPipValPerLot*fxLots;
   const fxBufPips=fxPipVal>0?Math.round(fxB/fxPipVal):0;
-  const fxBufPct=fxBufPips*0.0001/fx*100;
+  const fxBufPct=fxBufPips*0.001/fx*100;
 
   // MOEX buffer
   const mxSensPerPct=notionalRub/100;
@@ -1708,6 +1715,10 @@ function calcTripleEu(){
   const swDaily=swapPips*fxPipValPerLot*fxLots;
   const repoN=bor*repoAnn/365;
   const swPctCap=Math.abs(swT)/totCap*100;
+  // Live swap hint
+  const teSwSign=swDaily>=0?'+':'−';
+  const teSwColor=swDaily>=0?'var(--green)':'var(--red)';
+  $('teSwapLive').innerHTML=`→ <span style="color:${teSwColor}">${teSwSign}$${fm(Math.abs(swDaily),2)}/сутки</span> на ${fxLots.toFixed(2)} FX лота`;
   $('teCapUsage').innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'
     +'<div><div style="font-size:11px;color:var(--tl);margin-bottom:4px"><b style="color:var(--cyan)">FOREX</b></div>'
     +'<div style="font-size:12px;color:var(--tl)">Маржа: <b style="color:var(--tw)">$'+fm(fxMarg,0)+'</b> ('+fxLots.toFixed(2)+' лотов)</div>'
